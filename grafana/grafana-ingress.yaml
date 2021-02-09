@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: grafana
+spec:
+  rules:
+  - host: grafana.keepcoding.gcp.moncadaisla.es
+    http:
+      paths:
+      - backend:
+          serviceName: grafana
+          servicePort: 3000
